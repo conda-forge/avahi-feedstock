@@ -2,11 +2,11 @@
 {% set version = "0.8" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "http://avahi.org/download/{{ name }}-{{ version }}.tar.gz"
+  url: http://avahi.org/download/{{ name }}-{{ version }}.tar.gz
   sha256: 060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda
 
 build:
@@ -40,13 +40,12 @@ outputs:
         # check script
         - avahi-bookmarks --help
     about:
-      home: "http://avahi.org"
-      dev_url: "https://github.com/lathiat/avahi"
-      doc_url: "http://avahi.org/doxygen/html/"
-      license: "LGPL-2.1-or-later"
-      license_family: "LGPL"
-      license_file: "LICENSE"
-      summary: "Python utility package for Avahi"
+      home: http://avahi.org
+      dev_url: https://github.com/lathiat/avahi.git
+      doc_url: http://avahi.org/doxygen/html/
+      license: LGPL-2.1-or-later
+      license_file: LICENSE
+      summary: Python utility package for Avahi
       description: |
         Avahi is a system which facilitates service discovery on
         a local network -- this means that you can plug your laptop or
@@ -59,13 +58,12 @@ outputs:
         This package contains utility modules to talk to Avahi with Python easier.
 
 about:
-  home: "http://avahi.org"
-  dev_url: "https://github.com/lathiat/avahi"
-  doc_url: "http://avahi.org/doxygen/html/"
-  license: "LGPL-2.1-or-later"
-  license_family: "LGPL"
-  license_file: "LICENSE"
-  summary: "Local network service discovery"
+  home: http://avahi.org
+  dev_url: https://github.com/lathiat/avahi.git
+  doc_url: http://avahi.org/doxygen/html/
+  license: LGPL-2.1-or-later
+  license_file: LICENSE
+  summary: Local network service discovery
   description: |
     Avahi is a system which facilitates service discovery on
     a local network -- this means that you can plug your laptop or
