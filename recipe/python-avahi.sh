@@ -2,7 +2,9 @@
 
 set -ex
 
-pushd _build
+mkdir -p _build_py${PYVER}
+cd _build_py${PYVER}
+
 ${SRC_DIR}/configure \
 	--disable-autoipd \
 	--disable-gdbm \
@@ -10,12 +12,14 @@ ${SRC_DIR}/configure \
 	--disable-gobject \
 	--disable-gtk \
 	--disable-gtk3 \
+	--disable-libdaemon \
+	--disable-libevent \
 	--disable-manpages \
 	--disable-mono \
 	--disable-qt3 \
 	--disable-qt4 \
+	--disable-qt5 \
 	--enable-dbus \
-	--enable-libdaemon \
 	--enable-python \
 	--enable-python-dbus \
 	--enable-pygobject \
@@ -25,6 +29,9 @@ ${SRC_DIR}/configure \
 
 # build
 make -j ${CPU_COUNT} -C avahi-python
+
+# test
+make -j ${CPU_COUNT} -C avahi-python check
 
 # install
 make -j ${CPU_COUNT} -C avahi-python install

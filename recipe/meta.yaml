@@ -13,16 +13,6 @@ build:
   number: 0
   skip: true  # [win]
 
-requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - intltool
-    - make
-    - pkg-config
-  host:
-    - gdbm
-
 outputs:
   - name: python-avahi
     script: python-avahi.sh
@@ -37,7 +27,6 @@ outputs:
         - dbus >=0.34
         - dbus-python >=0.34
         - expat
-        - libdaemon >=0.14
         - pygobject
         - python
       run:
@@ -47,6 +36,9 @@ outputs:
     test:
       imports:
         - avahi
+      commands:
+        # check script
+        - avahi-bookmarks --help
     about:
       home: "http://avahi.org"
       dev_url: "https://github.com/lathiat/avahi"
