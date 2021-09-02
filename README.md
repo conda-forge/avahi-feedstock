@@ -9,7 +9,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/avahi-feedstock
 
 Summary: Python utility package for Avahi
 
-Development: https://github.com/lathiat/avahi
+Development: https://github.com/lathiat/avahi.git
 
 Documentation: http://avahi.org/doxygen/html/
 
