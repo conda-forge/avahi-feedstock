@@ -1,4 +1,4 @@
-set -exou
+set -xou
 
 ./configure --prefix $PREFIX \
             --libdir ${PREFIX}/lib \
@@ -10,4 +10,4 @@ set -exou
             --disable-mono
 
 make -j$(nproc)
-sudo make install
+make install
