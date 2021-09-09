@@ -7,7 +7,7 @@ Package license: LGPL-2.1-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/avahi-feedstock/blob/master/LICENSE.txt)
 
-Summary: Python utility package for Avahi
+Summary: Local network service discovery
 
 Development: https://github.com/lathiat/avahi.git
 
@@ -20,8 +20,6 @@ you can chat with, find printers to print to or find files being
 shared. This kind of technology is already found in MacOS X (branded
 'Rendezvous', 'Bonjour' and sometimes 'ZeroConf') and is very
 convenient.
-
-This package contains utility modules to talk to Avahi with Python easier.
 
 
 Current build status
@@ -42,59 +40,17 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.6.____cpython</td>
+              <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9016&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/avahi-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/avahi-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.7.____cpython</td>
+              <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9016&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/avahi-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.7.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9016&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/avahi-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9016&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/avahi-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.6.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9016&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/avahi-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.6.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.7.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9016&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/avahi-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.7.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9016&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/avahi-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9016&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/avahi-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/avahi-feedstock?branchName=master&jobName=osx&configuration=osx_64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -110,6 +66,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-avahi-green.svg)](https://anaconda.org/conda-forge/avahi) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/avahi.svg)](https://anaconda.org/conda-forge/avahi) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/avahi.svg)](https://anaconda.org/conda-forge/avahi) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/avahi.svg)](https://anaconda.org/conda-forge/avahi) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-python--avahi-green.svg)](https://anaconda.org/conda-forge/python-avahi) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/python-avahi.svg)](https://anaconda.org/conda-forge/python-avahi) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/python-avahi.svg)](https://anaconda.org/conda-forge/python-avahi) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/python-avahi.svg)](https://anaconda.org/conda-forge/python-avahi) |
 
 Installing avahi
@@ -122,16 +79,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `python-avahi` can be installed with:
+Once the `conda-forge` channel has been enabled, `avahi, python-avahi` can be installed with:
 
 ```
-conda install python-avahi
+conda install avahi python-avahi
 ```
 
-It is possible to list all of the versions of `python-avahi` available on your platform with:
+It is possible to list all of the versions of `avahi` available on your platform with:
 
 ```
-conda search python-avahi --channel conda-forge
+conda search avahi --channel conda-forge
 ```
 
 
@@ -198,5 +155,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@andfoy](https://github.com/andfoy/)
 * [@duncanmmacleod](https://github.com/duncanmmacleod/)
 
