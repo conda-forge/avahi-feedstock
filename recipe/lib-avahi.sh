@@ -10,4 +10,4 @@ set -exou
             --disable-mono
 
 make -j$(nproc)
-make install
+sudo make install
