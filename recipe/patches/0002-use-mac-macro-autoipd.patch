@@ -1,0 +1,20 @@
+--- avahi-autoipd/main.c      2019-02-05 06:02:30.273035317 +0000
++++ avahi-autoipd/main.c 2021-09-10 17:37:20.755323357 +0000
+@@ -30,7 +30,7 @@
+ #endif
+ #include <sys/socket.h>
+ #include <sys/wait.h>
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__APPLE__)
+ #include <sys/sysctl.h>
+ #endif
+
+@@ -39,7 +39,7 @@
+ #endif
+ #include <net/ethernet.h>
+ #include <net/if.h>
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__APPLE__)
+ #include <net/if_dl.h>
+ #include <net/route.h>
+ #endif
