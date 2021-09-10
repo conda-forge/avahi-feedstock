@@ -64,6 +64,8 @@ outputs:
         # Compilers are named 'c', 'cxx' and 'fortran'.
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
+        - make
+        - pkg-config
       host:
         - libevent
         - libdaemon
