@@ -1,5 +1,5 @@
 --- avahi-autoipd/Makefile.in   2020-02-18 07:03:15.618631524 +0000
-+++ avahi-autoipd/Makefile.copy.in      2021-09-10 19:24:39.568173029 +0000
++++ avahi-autoipd/Makefile.in      2021-09-10 19:24:39.568173029 +0000
 @@ -107,9 +107,8 @@
  build_triplet = @build@
  host_triplet = @host@
