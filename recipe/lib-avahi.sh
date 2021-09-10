@@ -21,4 +21,3 @@ fi
 make -j${NPROC}
 make install
 make distclean
-make clean
