@@ -1,0 +1,35 @@
+--- avahi-autoipd/Makefile.in   2020-02-18 07:03:15.618631524 +0000
++++ avahi-autoipd/Makefile.copy.in      2021-09-10 19:24:39.568173029 +0000
+@@ -107,9 +107,8 @@
+ build_triplet = @build@
+ host_triplet = @host@
+ @ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@sbin_PROGRAMS = avahi-autoipd$(EXEEXT)
+-@ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_FREEBSD_TRUE@am__append_1 = iface-bsd.c
+-@ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_FREEBSD_TRUE@am__append_2 = -lpcap
+-@ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_FREEBSD_FALSE@am__append_3 = iface-linux.c
++@ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_FREEBSD_FALSE@am__append_1 = iface-bsd.c
++@ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_FREEBSD_FALSE@am__append_2 = -lpcap
+ subdir = avahi-autoipd
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/common/acx_pthread.m4 \
+@@ -144,8 +143,7 @@
+        iface.h ../avahi-common/malloc.h ../avahi-common/malloc.c \
+        ../avahi-common/timeval.h ../avahi-common/timeval.c \
+        iface-bsd.c iface-linux.c
+-@ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_FREEBSD_TRUE@am__objects_1 = avahi_autoipd-iface-bsd.$(OBJEXT)
+-@ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_FREEBSD_FALSE@am__objects_2 = avahi_autoipd-iface-linux.$(OBJEXT)
++@ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_FREEBSD_FALSE@am__objects_1 = avahi_autoipd-iface-bsd.$(OBJEXT)
+ @ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@am_avahi_autoipd_OBJECTS = avahi_autoipd-main.$(OBJEXT) \
+ @ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@     avahi_autoipd-setproctitle.$(OBJEXT) \
+ @ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@     avahi_autoipd-malloc.$(OBJEXT) \
+@@ -1002,9 +1000,7 @@
+ .PRECIOUS: Makefile
+
+
+-@ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_FREEBSD_TRUE@avahi-autoipd.action: avahi-autoipd.action.bsd
+-@ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_FREEBSD_TRUE@        $(AM_V_GEN)cp $< $@
+-@ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_FREEBSD_FALSE@avahi-autoipd.action: avahi-autoipd.action.linux
++@ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_FREEBSD_FALSE@avahi-autoipd.action: avahi-autoipd.action.bsd
+ @ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_FREEBSD_FALSE@       $(AM_V_GEN)cp $< $@
+
+ @ENABLE_AUTOIPD_TRUE@@HAVE_LIBDAEMON_TRUE@@TARGET_DEBIAN_TRUE@dhclient-enter-hook: dhclient-enter-hook.in
