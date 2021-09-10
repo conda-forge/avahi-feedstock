@@ -68,6 +68,8 @@ outputs:
         - {{ compiler('cxx') }}
         - make
         - pkg-config
+        - intltool
+        - make
       host:
         - libevent
         - libdaemon
