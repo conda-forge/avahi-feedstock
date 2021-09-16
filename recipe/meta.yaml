@@ -70,7 +70,6 @@ outputs:
         - make
         - pkg-config
         - intltool
-        - make
       host:
         - libevent
         - libdaemon
