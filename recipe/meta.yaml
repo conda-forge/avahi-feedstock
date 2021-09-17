@@ -69,14 +69,18 @@ outputs:
         - pkg-config
         - intltool
       host:
-        - libevent
-        - libdaemon
         - dbus >=0.34
+        - expat
+        - glib
+        - libdaemon
+        - libevent
+      run:
+        - dbus >=0.34
+        - expat
+        - libdaemon
+        - libevent
+        - libglib
     test:
-      requires:
-        - dbus >=0.34
-        - libdaemon
-        - libevent
       commands:
         - avahi-browse --version
         - avahi-publish --version
