@@ -64,6 +64,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
         - make
         - pkg-config
         - intltool
