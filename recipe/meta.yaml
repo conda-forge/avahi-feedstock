@@ -67,7 +67,6 @@ outputs:
         - {{ compiler('cxx') }}
         - make
         - pkg-config
-        - intltool
       host:
         - dbus >=0.34
         - expat
