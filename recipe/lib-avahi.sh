@@ -1,5 +1,8 @@
 set -xou
 
+mkdir build
+pushd build
+
 EXTRA_DISABLES=""
 NPROC=$CPU_COUNT
 if [[ $(uname) == "Darwin" ]]; then
@@ -8,15 +11,14 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 
-./configure --prefix $PREFIX \
-            --libdir ${PREFIX}/lib \
-            --bindir ${PREFIX}/bin \
-            --disable-qt5 \
-            --disable-gtk3 \
-            --disable-gdbm \
-            --disable-python \
-            --disable-mono $EXTRA_DISABLES
+../configure --prefix $PREFIX \
+             --libdir ${PREFIX}/lib \
+             --bindir ${PREFIX}/bin \
+             --disable-qt5 \
+             --disable-gtk3 \
+             --disable-gdbm \
+             --disable-python \
+             --disable-mono $EXTRA_DISABLES
 
 make -j${NPROC}
 make install
-make distclean
