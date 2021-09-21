@@ -8,9 +8,12 @@ package:
 source:
   url: http://avahi.org/download/{{ name }}-{{ version }}.tar.gz
   sha256: 060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda
+  patches:
+    - patches/0001-move-avahi-runtime-dir-to-prefix.patch
+    - patches/0002-install-daemons-to-prefix-macos.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 outputs:
@@ -56,6 +59,31 @@ outputs:
         convenient.
 
         This package contains utility modules to talk to Avahi with Python easier.
+  - name: avahi
+    script: lib-avahi.sh
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - make
+        - pkg-config
+      host:
+        - dbus >=0.34
+        - expat
+        - glib
+        - libdaemon
+        - libevent
+      run:
+        - dbus >=0.34
+        - expat
+        - libdaemon
+        - libevent
+        - libglib
+    test:
+      commands:
+        - avahi-browse --version
+        - avahi-publish --version
+        - avahi-resolve --version
 
 about:
   home: http://avahi.org
@@ -75,4 +103,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - andfoy
     - duncanmmacleod

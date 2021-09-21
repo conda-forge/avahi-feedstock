@@ -1,0 +1,11 @@
+--- initscript/darwin/Makefile.in	2021-09-13 17:14:01.224760859 -0500
++++ initscript/darwin/Makefile.in	2021-09-13 17:14:23.520669440 -0500
+@@ -433,7 +433,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-initddir = /Library/LaunchDaemons/
++initddir = $(prefix)/Library/LaunchDaemons/
+ EXTRA_DIST = \
+ 	org.freedesktop.avahi-daemon.plist.in \
+ 	org.freedesktop.avahi-dnsconfd.plist.in

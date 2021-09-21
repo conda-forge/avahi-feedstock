@@ -1,0 +1,9 @@
+--- configure   2020-02-18 07:03:14.638650833 +0000
++++ configure    2021-09-10 16:22:15.225297860 +0000
+@@ -24638,7 +24638,7 @@
+ #
+ # Avahi runtime dir
+ #
+-avahi_runtime_dir="/run"
++avahi_runtime_dir="${prefix}/run"
+ avahi_socket="${avahi_runtime_dir}/avahi-daemon/socket"
