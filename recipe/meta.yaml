@@ -78,6 +78,7 @@ outputs:
       host:
         - dbus >=0.34
         - expat
+        - gettext
         - glib
         - libdaemon
         - libevent
