@@ -71,6 +71,10 @@ outputs:
         - gnuconfig  # [unix]
         - make
         - pkg-config
+        # extras for cross-compiling
+        # (glib-genmarshal calls out to python3)
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
         - dbus >=0.34
         - expat
