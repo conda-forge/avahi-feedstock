@@ -1,5 +1,8 @@
 set -xou
 
+# update config.sub and config.guess
+cp ${BUILD_PREFIX}/share/gnuconfig/config.* ${SRC_DIR}/
+
 mkdir build
 pushd build
 

@@ -67,6 +67,7 @@ outputs:
       build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
+        - gnuconfig  # [unix]
         - make
         - pkg-config
       host:
