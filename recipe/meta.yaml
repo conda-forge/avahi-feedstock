@@ -11,6 +11,7 @@ source:
   patches:
     - patches/0001-move-avahi-runtime-dir-to-prefix.patch
     - patches/0002-install-daemons-to-prefix-macos.patch
+    - patches/0003-fix-allow_undefined-macos-11.patch
 
 build:
   number: 2
