@@ -9,7 +9,7 @@ pushd build
 EXTRA_DISABLES=""
 NPROC=$CPU_COUNT
 if [[ $(uname) == "Darwin" ]]; then
-    export CFLAGS=-D__APPLE_USE_RFC_2292
+    export CFLAGS="${CFLAGS} -D__APPLE_USE_RFC_2292"
     EXTRA_DISABLES="--disable-autoipd"
 fi
 
