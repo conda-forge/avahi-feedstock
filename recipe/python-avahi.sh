@@ -2,8 +2,8 @@
 
 set -ex
 
-mkdir -p _build_py${PYVER}
-cd _build_py${PYVER}
+mkdir -p _build_py${PY_VER}
+cd _build_py${PY_VER}
 
 ${SRC_DIR}/configure \
 	--disable-autoipd \
@@ -28,10 +28,12 @@ ${SRC_DIR}/configure \
 ;
 
 # build
-make -j ${CPU_COUNT} -C avahi-python
+make -j ${CPU_COUNT} V=1 VERBOSE=1 -C avahi-python
 
 # test
-make -j ${CPU_COUNT} -C avahi-python check
+if [[ "${build_platform}" == "${target_platform}" ]]; then
+	make -j ${CPU_COUNT} V=1 VERBOSE=1 -C avahi-python check
+fi
 
 # install
-make -j ${CPU_COUNT} -C avahi-python install
+make -j ${CPU_COUNT} V=1 VERBOSE=1 -C avahi-python install
