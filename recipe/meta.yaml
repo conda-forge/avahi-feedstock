@@ -67,6 +67,10 @@ outputs:
         This package contains utility modules to talk to Avahi with Python easier.
   - name: avahi
     script: lib-avahi.sh
+    build:
+      ignore_run_exports:
+        - libstdcxx-ng  # [linux]
+        - libcxx  # [osx]
     requirements:
       build:
         - {{ compiler('c') }}
