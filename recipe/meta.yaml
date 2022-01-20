@@ -11,6 +11,7 @@ source:
   patches:
     - patches/0001-move-avahi-runtime-dir-to-prefix.patch
     - patches/0002-install-daemons-to-prefix-macos.patch
+    - patches/0003-fix-allow_undefined-macos-11.patch
 
 build:
   number: 2
@@ -23,9 +24,14 @@ outputs:
       build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
+        - gnuconfig  # [unix]
         - intltool
         - make
         - pkg-config
+        # extras for cross-compiling
+        - dbus-python >=0.34                  # [build_platform != target_platform]
+        - python                              # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}  # [build_platform != target_platform]
       host:
         - dbus >=0.34
         - dbus-python >=0.34
@@ -61,15 +67,24 @@ outputs:
         This package contains utility modules to talk to Avahi with Python easier.
   - name: avahi
     script: lib-avahi.sh
+    build:
+      ignore_run_exports:
+        - libstdcxx-ng  # [linux]
+        - libcxx  # [osx]
     requirements:
       build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
+        - gnuconfig  # [unix]
         - make
         - pkg-config
+        # extras for cross-compiling
+        # (glib-genmarshal calls out to python3)
+        - python                                 # [build_platform != target_platform]
       host:
         - dbus >=0.34
         - expat
+        - gettext
         - glib
         - libdaemon
         - libevent
