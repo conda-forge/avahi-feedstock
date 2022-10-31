@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: http://avahi.org/download/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/lathiat/avahi/releases/download/v{{ version }}/avahi-{{ version }}.tar.gz
   sha256: 060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda
   patches:
     - patches/0001-move-avahi-runtime-dir-to-prefix.patch
@@ -14,7 +14,7 @@ source:
     - patches/0003-fix-allow_undefined-macos-11.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
 
 outputs:
@@ -71,6 +71,9 @@ outputs:
       ignore_run_exports:
         - libstdcxx-ng  # [linux]
         - libcxx  # [osx]
+      missing_dso_whitelist:
+        # see https://github.com/conda/conda-build/pull/4529
+        - '**/ld-linux-aarch64.so*'  # [linux and aarch64]
     requirements:
       build:
         - {{ compiler('c') }}
@@ -84,7 +87,6 @@ outputs:
       host:
         - dbus >=0.34
         - expat
-        - gettext
         - glib
         - libdaemon
         - libevent
