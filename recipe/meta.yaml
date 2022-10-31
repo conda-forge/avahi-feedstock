@@ -71,6 +71,9 @@ outputs:
       ignore_run_exports:
         - libstdcxx-ng  # [linux]
         - libcxx  # [osx]
+      missing_dso_whitelist:
+        # see https://github.com/conda/conda-build/pull/4529
+        - '**/ld-linux-aarch64.so*'  # [linux and aarch64]
     requirements:
       build:
         - {{ compiler('c') }}

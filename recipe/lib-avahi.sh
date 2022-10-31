@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -xou
+set -x
 
 # update config.sub and config.guess
 cp ${BUILD_PREFIX}/share/gnuconfig/config.* ${SRC_DIR}/
@@ -16,9 +16,10 @@ fi
 
 # configure
 ${SRC_DIR}/configure \
-    --prefix $PREFIX \
-    --libdir ${PREFIX}/lib \
-    --bindir ${PREFIX}/bin \
+    --prefix=$PREFIX \
+    --libdir=${PREFIX}/lib \
+    --bindir=${PREFIX}/bin \
+    --with-distro=none \
     --disable-qt3 \
     --disable-qt5 \
     --disable-gtk3 \
@@ -32,7 +33,7 @@ ${SRC_DIR}/configure \
 make -j ${CPU_COUNT} V=1 VERBOSE=1
 
 # test (not when cross compiling)
-if [[ "${build_platform}" == "${target_platform}" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
     make -j ${CPU_COUNT} V=1 VERBOSE=1 check
 fi
 

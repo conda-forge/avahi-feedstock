@@ -24,6 +24,7 @@ ${SRC_DIR}/configure \
 	--enable-python-dbus \
 	--enable-pygobject \
 	--prefix=${PREFIX} \
+	--with-distro=none \
 	--with-xml=expat \
 ;
 
@@ -31,7 +32,7 @@ ${SRC_DIR}/configure \
 make -j ${CPU_COUNT} V=1 VERBOSE=1 -C avahi-python
 
 # test
-if [[ "${build_platform}" == "${target_platform}" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
 	make -j ${CPU_COUNT} V=1 VERBOSE=1 -C avahi-python check
 fi
 
