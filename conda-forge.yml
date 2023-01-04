@@ -1,15 +1,11 @@
 build_platform:
   linux_aarch64: linux_64
+  linux_ppc64le: linux_64
   osx_arm64: osx_64
+conda_build:
+  pkg_format: '2'
 conda_forge_output_validation: true
 github:
   branch_name: main
   tooling_branch_name: main
-provider:
-  linux_aarch64: default
-test_on_native_only: true
-travis:
-  secure:
-    BINSTAR_TOKEN: uUUH8HGE9218DP5tcYdZm8QqSciZ7Y4rrt5V2jEEIrBhnEPBF4LmdOVLnVMbYcBlbcJCRyjfLdQoO84sMhhh151hkBP6RB1jHEDS3e3RVrA1sVn/icKok2+RDltTVytwvFkOUcybzwo0NWoSjiAHLirgkwjA0xzcJ0cTLCHborsqsnhHqPZyHvfSdSDQ4idwaNfU0cMNfucoOxRJG3EyhehTyXDIbfYIKyKXUt8e/ivN2L78QzPadLJMlrjU8FvUaeqgePbTLoTGbBdJ0ok3zXiv/hLjrCRax8wKGViYtPhim0p+OHd+FAN2QIVROGu8UQQS7T1/iS4Y64Q6jMMx4PxFoeBODJ9ryqsB+LZZQ5glRwUKG6HDu+rh9SxMU86lxoCi3h3cjqJ9cov8oDPRBgSFlW+qcyqbAPnVGTR88ULmvfji1gsmYY0TKIJZqm9yk2Ay+7WwNXEqjT8b7nfo0tRbZrQXaYA/VarpYoDkACeT2yXPjdtiutAHw/Qmw0DH8UfM9Sd0h9SpFDbgVvCV4V1zV63CPnBT2ZBFSqu8MoECy5i700q0xmDX/WBDVsYA7cBhVfkKFtMza1PHQaTnDG0mJ7ocl5mGtsH8rGhH6xJnEdglTKoQuCAoTKrpw8fg42RKwbAznTEnJxwbBr8cTIbEtuVuxNdNjAlMAfN80Q0=
-conda_build:
-  pkg_format: '2'
+test: native_and_emulated
