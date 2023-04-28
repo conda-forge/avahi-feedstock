@@ -14,7 +14,7 @@ source:
     - patches/0003-fix-allow_undefined-macos-11.patch
 
 build:
-  number: 3
+  number: 4
   skip: true  # [win]
 
 outputs:
