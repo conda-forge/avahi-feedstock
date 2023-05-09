@@ -1,11 +1,14 @@
+About avahi-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/avahi-feedstock/blob/main/LICENSE.txt)
+
 About avahi
-===========
+-----------
 
 Home: http://avahi.org
 
 Package license: LGPL-2.1-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/avahi-feedstock/blob/main/LICENSE.txt)
 
 Summary: Local network service discovery
 
@@ -20,6 +23,29 @@ you can chat with, find printers to print to or find files being
 shared. This kind of technology is already found in MacOS X (branded
 'Rendezvous', 'Bonjour' and sometimes 'ZeroConf') and is very
 convenient.
+
+About python-avahi
+------------------
+
+Home: http://avahi.org
+
+Package license: LGPL-2.1-or-later
+
+Summary: Python utility package for Avahi
+
+Development: https://github.com/lathiat/avahi.git
+
+Documentation: http://avahi.org/doxygen/html/
+
+Avahi is a system which facilitates service discovery on
+a local network -- this means that you can plug your laptop or
+computer into a network and instantly be able to view other people who
+you can chat with, find printers to print to or find files being
+shared. This kind of technology is already found in MacOS X (branded
+'Rendezvous', 'Bonjour' and sometimes 'ZeroConf') and is very
+convenient.
+
+This package contains utility modules to talk to Avahi with Python easier.
 
 
 Current build status
