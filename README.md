@@ -3,6 +3,7 @@ About avahi-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/avahi-feedstock/blob/main/LICENSE.txt)
 
+
 About avahi
 -----------
 
@@ -23,6 +24,7 @@ you can chat with, find printers to print to or find files being
 shared. This kind of technology is already found in MacOS X (branded
 'Rendezvous', 'Bonjour' and sometimes 'ZeroConf') and is very
 convenient.
+
 
 About python-avahi
 ------------------
