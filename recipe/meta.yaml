@@ -93,7 +93,6 @@ outputs:
         - libevent
       run:
         - dbus >=0.34
-        - expat
         - libdaemon
         - libevent
         - libglib
