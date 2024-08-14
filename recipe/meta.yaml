@@ -70,9 +70,8 @@ outputs:
   - name: avahi
     script: lib-avahi.sh
     build:
-      ignore_run_exports:
-        - libstdcxx-ng  # [linux]
-        - libcxx  # [osx]
+      ignore_run_exports_from:
+        - {{ compiler('cxx') }}
     requirements:
       build:
         - {{ stdlib('c') }}
