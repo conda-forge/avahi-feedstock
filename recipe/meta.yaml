@@ -1,8 +1,7 @@
-{% set name = "avahi" %}
 {% set version = "0.8" %}
 
 package:
-  name: {{ name|lower }}
+  name: avahi-split
   version: {{ version }}
 
 source:
@@ -122,3 +121,4 @@ extra:
   recipe-maintainers:
     - andfoy
     - duncanmmacleod
+  feedstock-name: avahi
