@@ -1,8 +1,7 @@
-{% set name = "avahi" %}
 {% set version = "0.8" %}
 
 package:
-  name: {{ name|lower }}
+  name: avahi-split
   version: {{ version }}
 
 source:
@@ -15,7 +14,7 @@ source:
     - patches/0004-py-compile-imp.patch
 
 build:
-  number: 6
+  number: 7
   skip: true  # [win]
 
 outputs:
@@ -23,6 +22,7 @@ outputs:
     script: python-avahi.sh
     requirements:
       build:
+        - {{ stdlib('c') }}
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - gnuconfig  # [unix]
@@ -66,17 +66,15 @@ outputs:
         convenient.
 
         This package contains utility modules to talk to Avahi with Python easier.
+
   - name: avahi
     script: lib-avahi.sh
     build:
-      ignore_run_exports:
-        - libstdcxx-ng  # [linux]
-        - libcxx  # [osx]
-      missing_dso_whitelist:
-        # see https://github.com/conda/conda-build/pull/4529
-        - '**/ld-linux-aarch64.so*'  # [linux and aarch64]
+      ignore_run_exports_from:
+        - {{ compiler('cxx') }}
     requirements:
       build:
+        - {{ stdlib('c') }}
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - gnuconfig  # [unix]
@@ -122,3 +120,4 @@ extra:
   recipe-maintainers:
     - andfoy
     - duncanmmacleod
+  feedstock-name: avahi
