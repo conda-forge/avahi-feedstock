@@ -26,7 +26,6 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - gnuconfig  # [unix]
-        - intltool
         - make
         - pkg-config
         # extras for cross-compiling
@@ -89,6 +88,7 @@ outputs:
         - glib
         - libdaemon
         - libevent
+        - libintl  # [osx]
       run:
         - dbus >=0.34
         - libdaemon
