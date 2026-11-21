@@ -14,7 +14,7 @@ source:
     - patches/0004-py-compile-imp.patch
 
 build:
-  number: 10
+  number: 11
   skip: true  # [win]
 
 outputs:
